@@ -1,0 +1,56 @@
+[
+  {
+    "asset_id": "s3-001",
+    "asset_type": "s3_bucket",
+    "name": "company-data",
+    "region": "us-west-2",
+    "public_access": true,
+    "encryption_enabled": false,
+    "logging_enabled": false
+  },
+  {
+    "asset_id": "iam-001",
+    "asset_type": "iam_user",
+    "name": "admin-user",
+    "region": "global",
+    "mfa_enabled": false,
+    "privileged": true,
+    "active": true
+  },
+  {
+    "asset_id": "sg-001",
+    "asset_type": "security_group",
+    "name": "web-server-sg",
+    "region": "us-west-2",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "port": 22,
+        "source": "0.0.0.0/0"
+      },
+      {
+        "protocol": "tcp",
+        "port": 443,
+        "source": "0.0.0.0/0"
+      }
+    ]
+  },
+  {
+    "asset_id": "iam-002",
+    "asset_type": "iam_user",
+    "name": "developer-user",
+    "region": "global",
+    "mfa_enabled": true,
+    "privileged": false,
+    "active": true
+  },
+  {
+    "asset_id": "s3-002",
+    "asset_type": "s3_bucket",
+    "name": "private-backups",
+    "region": "us-west-2",
+    "public_access": false,
+    "encryption_enabled": true,
+    "logging_enabled": true
+  }
+]
