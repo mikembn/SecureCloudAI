@@ -35,6 +35,11 @@ def detect_cloud_security_findings(
                         f"Storage bucket '{asset_name}' "
                         "allows public access."
                     ),
+                    "remediation": (
+                        "Disable public access and verify that "
+                        "bucket access policies only allow "
+                        "authorized principals."
+                    ),
                     "asset_id": asset_id,
                 }
             )
@@ -52,6 +57,11 @@ def detect_cloud_security_findings(
                     "description": (
                         f"Storage bucket '{asset_name}' "
                         "does not have encryption enabled."
+                    ),
+                    "remediation": (
+                        "Enable server-side encryption using an "
+                        "approved encryption key and verify that "
+                        "new objects are encrypted."
                     ),
                     "asset_id": asset_id,
                 }
@@ -71,6 +81,11 @@ def detect_cloud_security_findings(
                         f"Storage bucket '{asset_name}' "
                         "does not have logging enabled."
                     ),
+                    "remediation": (
+                        "Enable access logging or an equivalent "
+                        "centralized audit mechanism and verify "
+                        "that logs are retained appropriately."
+                    ),
                     "asset_id": asset_id,
                 }
             )
@@ -89,6 +104,11 @@ def detect_cloud_security_findings(
                     "description": (
                         f"Privileged IAM user '{asset_name}' "
                         "does not have MFA enabled."
+                    ),
+                    "remediation": (
+                        "Enable MFA for the privileged account "
+                        "and verify that privileged access "
+                        "requires the additional authentication factor."
                     ),
                     "asset_id": asset_id,
                 }
@@ -111,6 +131,11 @@ def detect_cloud_security_findings(
                                 f"Security group '{asset_name}' "
                                 "allows SSH access from "
                                 "0.0.0.0/0."
+                            ),
+                            "remediation": (
+                                "Restrict SSH access to approved "
+                                "management networks, VPN ranges, "
+                                "or other explicitly authorized sources."
                             ),
                             "asset_id": asset_id,
                         }
